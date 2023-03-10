@@ -362,44 +362,48 @@
 #   print(bacteria)
 #   time.sleep(0.5)
 
-# exercise - actors
-actors = [
-  "Gina Torres",
-  "Alan Tudyk",
-  "Ron Glass",
-]
+# # exercise - actors
+# actors = [
+#   "Gina Torres",
+#   "Alan Tudyk",
+#   "Ron Glass",
+# ]
 
-roles = [
-  "Zoe Washburn",
-  "Hoban Washburn",
-  "Derrial Book"
-]
+# roles = [
+#   "Zoe Washburn",
+#   "Hoban Washburn",
+#   "Derrial Book"
+# ]
 
-# actors - method 1
-# len(actors) gives the count of actors
-# indexes between 0 and count of actors
-for index in range(0, len(actors)):
-  print(actors[index] + " as " + roles[index])
+# # actors - method 1
+# # len(actors) gives the count of actors
+# # indexes between 0 and count of actors
+# for index in range(0, len(actors)):
+#   print(actors[index] + " as " + roles[index])
 
-# actors - method 2: use the `enumerate` function
-# enumerate is a fcn that gives us access to 2 variables on each iteration
-# the list item itself and that item's index
+# # actors - method 2: use the `enumerate` function
+# # enumerate is a fcn that gives us access to 2 variables on each iteration
+# # the list item itself and that item's index
 
-for index, actor in enumerate(actors):
-  print(actor + " as " + roles[index])
+# for index, actor in enumerate(actors):
+#   print(actor + " as " + roles[index])
 
 
-actorRoles = [
-  ["Gina Torres", "Zoe Washburn"],
-  ["Alan Tudyk", "Hoban Washburn"],
-  ["Ron Glass", "Derrial Book"],
-]
+# actorRoles = [
+#   ["Gina Torres", "Zoe Washburn"],
+#   ["Alan Tudyk", "Hoban Washburn"],
+#   ["Ron Glass", "Derrial Book"],
+# ]
 
-print('Featuring: \n=-=-=-=-=-=-=-=')
-for actor, role in actorRoles:
-  print(actor + " as " + role)
+# print('Featuring: \n=-=-=-=-=-=-=-=')
+# for actor, role in actorRoles:
+#   print(actor + " as " + role)
 
-# alternative:
-# for actorRole in actorRoles
-# actor = actorRole[0]
-# role = actorRole[1]
+# # alternative:
+# # for actorRole in actorRoles
+# # actor = actorRole[0]
+# # role = actorRole[1]
+
+# strings implement the List interface
+for index, letter in enumerate('abcdefghijklmnopqrstuvwxyz'):
+  print(letter + " is the " + str(index + 1) + "th letter of the alphabet")
