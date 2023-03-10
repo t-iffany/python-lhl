@@ -164,3 +164,131 @@ total = float(bill) + float(tip)
 print("Overall total: $", str(total))
 dividedTotal = float(total) / int(people)
 print("Each person should pay: $", dividedTotal)
+
+# lists
+emptyList = []
+
+people = [
+  "Bob",
+  "Jane",
+  "Tim",
+  "Laur",
+  "Udon",
+  "Tiff"
+]
+
+# single item
+print(people[3]) # Lau
+print(people[-1]) # Tiff
+print(people[0]) # Bob 
+
+index = 0
+print(people[index]) # Bob
+
+# find the index that represents the position in the list
+print(people.index("Tim"))
+
+# negative list indices
+secondLastPerson = people[-2] # Udon
+print(secondLastPerson)
+
+# list slicing
+
+# if we omit the first index = this slice starts at the beginning of the list
+print(people[:3]) # Bob, Jane, Tim
+print(people[2:5]) # Tim, Laur, Udon
+# if we omit the second index = this slice ends at the end of the list
+print(people[4:]) # Udon, Tiff
+print(people[-3:]) # Laur, Udon, Tiff
+
+# append method - add to end of the list
+people.append("Sarah")
+print(people)
+
+# insert method - parameter is the index at which we want to insert
+people.insert(2, "Carly")
+print(people)
+
+# change the value of a list item
+people[2] = "Carly-Rae"
+print(people)
+
+# del keyword, followed by the item we want to delete
+del people[4]
+print(people)
+
+# concatenate two lists
+newPeople = [
+  "Yoyo",
+  "Amy"
+]
+
+people = people + newPeople
+print(people)
+
+# exercise - foosball players
+
+foosballers = [
+  "Mia",
+  "Retta",
+  "Augustine",
+  "Jin",
+  "Waylon",
+  "Alphonso",
+  "Sage",
+  "Hubert",
+  "Raymon",
+  "Rebecca",
+  "Monty",
+  "Glen",
+  "Christi",
+  "Patrice",
+  "Craig",
+  "Dexter",
+  "Wally",
+  "Ian",
+  "Pat"
+]
+
+# 1. median player - player exactly in the middle 
+# total # player: len(foosballers) then divide by 2
+index = len(foosballers) / 2
+medianPlayer = foosballers[int(index)]
+print(medianPlayer)
+
+# 2. five players in the middle - median player + players 2 above and 2 below
+print(foosballers[7:10] + foosballers[10:12])
+
+# 3. add fake player to the exact middle of the list 
+foosballers.insert(int(len(foosballers)/2), "Average Player")
+print(foosballers)
+
+# 4. find "Average Player" and change name to uppercase
+foosballers[9] = "AVERAGE PLAYER"
+print(foosballers)
+
+# 5. add 5 more players with names of your choosing at the bottom of the list
+newPlayers = ["Arlo", "Barb", "Carl", "Dan", "Elle"]
+print(foosballers + newPlayers)
+
+# 6. fix AVERAGE PLAYER back to middle
+# delete old AVERAGE PLAYER
+del foosballers[9]
+# create new list by adding foosballers and newPlayers
+newList = foosballers + newPlayers
+# find new median player index
+avgPlayerInd = int(len(newList)/2)
+# insert AVERAGE PLAYER to avgPlayerIndex
+newList.insert(avgPlayerInd, "AVERAGE PLAYER")
+print(newList)
+
+# 7. Five more players show up, but they are ranked. 
+# Insert them at the appropriate location   ????
+hubertInd = newList.index("Hubert")
+newList.insert(hubertInd, "Lacy")
+
+rebeccaInd = newList.index("Rebecca")
+newList.insert(rebeccaInd, "Omar")
+newList[7] = "Otto"  # newList.insert(7, "Otto")
+newList[-10] = "Chauncey"  # newList.insert(-10, "Chauncey")
+print(newList)
