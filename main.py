@@ -338,3 +338,26 @@ for nextInstruction in instructionSteps:
   instructionStepsButScreamed.append(upperInstruction)
 
 print(instructionStepsButScreamed)
+
+# iterating over a RANGE
+# range: invoke the range function and tell it what #s to start and end at
+bacteria = "🥔"
+
+# for each generation between 0 and 10, do:
+for generation in range(0, 10):
+  # keep doubling the bacteria population for "n" generations
+  # where "n" is the difference between first and last # in the range
+  bacteria = bacteria + bacteria
+
+print(bacteria)
+
+# import python built-in 'time' library and add pause btwn each generation
+import time
+
+bacteria = "🥔"
+generations = 10
+
+for generation in range(0, generations):
+  bacteria = bacteria * 2
+  print(bacteria)
+  time.sleep(0.5)
