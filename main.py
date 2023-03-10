@@ -293,71 +293,113 @@
 # newList[-10] = "Chauncey"  # newList.insert(-10, "Chauncey")
 # print(newList)
 
-# Looping
-# iterate = repeat the same procedure a number of times
-clothing = [
-  "Shirt",
-  "Pants",
-  "Socks"
+# # Looping
+# # iterate = repeat the same procedure a number of times
+# clothing = [
+#   "Shirt",
+#   "Pants",
+#   "Socks"
+# ]
+
+# # indentation is semantic in python ; indented = part of the code block
+# for item in clothing:
+#   foldedItem = "Folded " + item
+#   print(foldedItem)
+# print("This line is not part of the `for` loop")
+
+# # making new data
+# instructionSteps = [
+#   "turn left", 
+#   "go straight for 2 blocks",
+#   "turn right",
+#   "keep going until you see the dog statue",
+#   "turn right",
+#   "turn right again",
+#   "park right on the sidewalk"
+# ]
+
+# # start sentence with this ; create instructions variable outside the loop
+# # so that it wont be overwritten eachtime
+# instructions = "First, "
+
+# # start with instructions, then add nextInstruction and ", then ", and repeat
+# for nextInstruction in instructionSteps:
+#   instructions = instructions + nextInstruction + ", then "
+
+# print(instructions + "you're there!")
+
+# # screamed instructions
+# instructionStepsButScreamed = []
+
+# for nextInstruction in instructionSteps:
+#   # .upper to convert nextInstruction strings to uppercase
+#   upperInstruction = nextInstruction.upper()
+#   # adds a new item to the empty list
+#   instructionStepsButScreamed.append(upperInstruction)
+
+# print(instructionStepsButScreamed)
+
+# # iterating over a RANGE
+# # range: invoke the range function and tell it what #s to start and end at
+# bacteria = "🥔"
+
+# # for each generation between 0 and 10, do:
+# for generation in range(0, 10):
+#   # keep doubling the bacteria population for "n" generations
+#   # where "n" is the difference between first and last # in the range
+#   bacteria = bacteria + bacteria
+
+# print(bacteria)
+
+# # import python built-in 'time' library and add pause btwn each generation
+# import time
+
+# bacteria = "🥔"
+# generations = 10
+
+# for generation in range(0, generations):
+#   bacteria = bacteria * 2
+#   print(bacteria)
+#   time.sleep(0.5)
+
+# exercise - actors
+actors = [
+  "Gina Torres",
+  "Alan Tudyk",
+  "Ron Glass",
 ]
 
-# indentation is semantic in python ; indented = part of the code block
-for item in clothing:
-  foldedItem = "Folded " + item
-  print(foldedItem)
-print("This line is not part of the `for` loop")
-
-# making new data
-instructionSteps = [
-  "turn left", 
-  "go straight for 2 blocks",
-  "turn right",
-  "keep going until you see the dog statue",
-  "turn right",
-  "turn right again",
-  "park right on the sidewalk"
+roles = [
+  "Zoe Washburn",
+  "Hoban Washburn",
+  "Derrial Book"
 ]
 
-# start sentence with this ; create instructions variable outside the loop
-# so that it wont be overwritten eachtime
-instructions = "First, "
+# actors - method 1
+# len(actors) gives the count of actors
+# indexes between 0 and count of actors
+for index in range(0, len(actors)):
+  print(actors[index] + " as " + roles[index])
 
-# start with instructions, then add nextInstruction and ", then ", and repeat
-for nextInstruction in instructionSteps:
-  instructions = instructions + nextInstruction + ", then "
+# actors - method 2: use the `enumerate` function
+# enumerate is a fcn that gives us access to 2 variables on each iteration
+# the list item itself and that item's index
 
-print(instructions + "you're there!")
+for index, actor in enumerate(actors):
+  print(actor + " as " + roles[index])
 
-# screamed instructions
-instructionStepsButScreamed = []
 
-for nextInstruction in instructionSteps:
-  # .upper to convert nextInstruction strings to uppercase
-  upperInstruction = nextInstruction.upper()
-  # adds a new item to the empty list
-  instructionStepsButScreamed.append(upperInstruction)
+actorRoles = [
+  ["Gina Torres", "Zoe Washburn"],
+  ["Alan Tudyk", "Hoban Washburn"],
+  ["Ron Glass", "Derrial Book"],
+]
 
-print(instructionStepsButScreamed)
+print('Featuring: \n=-=-=-=-=-=-=-=')
+for actor, role in actorRoles:
+  print(actor + " as " + role)
 
-# iterating over a RANGE
-# range: invoke the range function and tell it what #s to start and end at
-bacteria = "🥔"
-
-# for each generation between 0 and 10, do:
-for generation in range(0, 10):
-  # keep doubling the bacteria population for "n" generations
-  # where "n" is the difference between first and last # in the range
-  bacteria = bacteria + bacteria
-
-print(bacteria)
-
-# import python built-in 'time' library and add pause btwn each generation
-import time
-
-bacteria = "🥔"
-generations = 10
-
-for generation in range(0, generations):
-  bacteria = bacteria * 2
-  print(bacteria)
-  time.sleep(0.5)
+# alternative:
+# for actorRole in actorRoles
+# actor = actorRole[0]
+# role = actorRole[1]
